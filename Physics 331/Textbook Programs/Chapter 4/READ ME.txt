@@ -1,0 +1,20 @@
+Few notes on the different programs in this folder. The old codes writen in the book were set up to have an initial time, a step size in time, and a set number of steps to take. Generally I don't like this method of programing as it forces you to do math when trying to figure out how far you want the code to integrate out to. If you change the step size you also have to change the number of steps you take. I would much rather have the inputs be the initial time, the final time, and the size of step you want to take. This, to me, is easier and more intuative to use.
+
+euler_1d: This is just the normal re-write of the MATLAB code that was in the book. 
+
+euler_1d_2: This is slightly changed to have the inputs be initial and final time, with step size.The main difference is that rather than setting up y as a numpy array it is set up as a normal list, where each new element is appended on, rather than setting y[n+1] to some new value. Also the time values are returned with the 'y' values. I used np.arange(t0,tf,dt) to make the time array. 
+
+euler_1d_3: Cut and Paste of euler_1d but the inputs are set up to be like euler_1d_2 so there is one added line at the very beginning to calculate what n_steps should be n_steps = int((tf - t0)/ dt)
+
+When I run these I get almost idential answers. euler_1d_2 returns the same values just with a few more digits. The interesting this is that euler_1d_2 runns faster than euler_1d. This isn't too surprising because we cut out a line in the 'for' loop when making euler_1d_2. In the Jupyter notebook I ran,
+
+%timeit euler_1d(0,0,.25,40,sky_diver)
+%timeit euler_1d_2(0,0,.25,10,sky_diver)
+%timeit euler_1d_3(0,0,.25,10,sky_diver)
+
+31.8 µs ± 350 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+19.9 µs ± 1.31 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+31.9 µs ± 90 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
+The really odd thing is that when I do this same thing for rk2_1d I get the opposite result for short runs, 
+
