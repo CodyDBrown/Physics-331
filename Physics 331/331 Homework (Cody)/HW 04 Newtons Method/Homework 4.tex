@@ -1,0 +1,32 @@
+\documentclass[]{letter}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fullpage}
+ 
+\pagestyle{empty} 
+\usepackage[margin=0.8in]{geometry}
+ 
+\begin{document}
+ 
+\textbf{\Large{PHSX 331 Homework 4 Due September 26, 2018 - Finite Square Well}}
+ 
+\hrulefill
+ 
+\textbf{\underline{Question 1}} In Physics 3, (PHYS 224) you dealt with an electron in a finite well (HRW 39-5). You learned that there are a number of possible energy levels that the electron can have while still being trapped in the well. The Schrödinger equation for that problem looked like (HRW eq. 39-18),
+\begin{equation}
+	\frac{d^2\psi}{dx^2} + \frac{8\pi^2m}{h^2} \big[E - U(x)\big] \psi = 0
+\end{equation}
+Where $m$ is the mass of the particle and $h$ is planks constant. At the time you were just given this equation and told what the possible energies were. When you take Quantum Mechanics (PHSX 461) You'll go through this problem in detail, but after a few pages of work you'll end up with an equation for the even states that still can't solve, (see Griffiths section 2.6)
+\begin{equation}
+	\tan z = \sqrt{\bigg(\frac{z_0}{z}\bigg)^2 - 1}
+\end{equation}
+Where $z = a\sqrt{2m(E + V_0)}/\hbar$ and $z_0 = a\sqrt{2mV_0}/ \hbar$. $V_0$ is the depth of the well, negative for this problem, the width of the well is from $x = -a$ to $x = a$ (see the picture). Both $V_0$ and $E$ are negative and $E$ must be larger than the wells depth,  $V_0 < E < 0$.
+\begin{center}
+	\includegraphics[scale = 0.3]{"Finite_square_well".png}
+\end{center}
+\begin{itemize}
+	\item Make a single figure with the left and right hand side of equation 2 plotted over each other as a function of $E$. The depth of the well is $V_0 = 450$ eV and the width $a = 50$ pm Do this for an electron $m_e = 9.11 \cdot 10^{-31}$kg, and remember that $\hbar = 1.055 \cdot 10^{-34}$ J$\cdot$s
+	\item Make a separate plot of the function we want to solve for $f(E) = \tan z - \sqrt{\big(\frac{z_0}{z}\big)^2 - 1}$ remember that $z$ is a function of the energy.
+	\item Using Newtons method to find all of the bound energy states. 
+\end{itemize}
+\end{document}

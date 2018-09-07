@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\usepackage{graphicx}	% Lets me put in pictures.
+\usepackage[export]{adjustbox}
+\usepackage{float}
+
+\usepackage{fullpage}
+ 
+\pagestyle{empty} 
+\usepackage[margin=0.8in]{geometry}
+ 
+\begin{document}
+ 
+\textbf{\Large{PHSX 331 HW 8. (DATE) - System of First Order ODE's}}
+ 
+\hrulefill
+ 
+\textbf{\underline{Question 1}} 
+The Lorenz equations were developed by Ed Lorenz (1963) to model convection in the atmosphere. These systems of coupled first order ODE's are of interest because of their chaotic solutions and the interesting butterfly pattern that emerges in the solutions under the correct criteria. The coupled, non-linear, equations are given by,
+
+ 
+\begin{align}
+	 \frac{dx}{dt} &= \sigma (y - x) \\
+	 \frac{dy}{dt} &= rx - y - xz \\
+	 \frac{dz}{dt} &= xy - bz
+\end{align}
+
+where $\sigma$, $r$, and $b$ are parameters greater than zero.
+\begin{figure}[H]
+	\includegraphics[scale = 0.5, center]{"Lorenz Solutions".png}
+	\caption{Solution to the Lorenz equation's for initial conditions $x = 0$, $y = 1$, and $z = 0$}
+\end{figure}
+\end{document}

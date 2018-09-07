@@ -1,0 +1,42 @@
+\documentclass[]{letter}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fullpage}
+ 
+\pagestyle{empty} 
+\usepackage[margin=0.8in]{geometry}
+ 
+\begin{document}
+ 
+\textbf{\Large{PHSX 331 HW 7. (DATE) - Laser Threshold}}
+ 
+\hrulefill
+ 
+\textbf{\underline{Question 1}} 
+
+ A solid state laser is a collection of special atoms that we'll call "laser active ". These are arranged in a solid state matrix between two reflective mirrors. A source of energy (pump) excites the atoms out of the ground state. These excited atoms will release their energy as a photon, and drop back down to the ground state. If the pump is weak, then the laser will act like a lamp, each atom oscillates independently and emits a random photon of light. Once the pump reaches a certain threshold then the atoms will oscillate in phase and the lamp becomes a laser. The number of photons $n(t)$ has a rate of change given by,
+\begin{align}
+	 \frac{dn}{dt} &= \text{gain} - \text{loss} \\
+		&= GnN - kn
+\end{align}
+
+$N(t)$ is the number of exited atoms, $G$ is the gain coefficient, $k$ is a constant so that $1/k$ is the expected lifetime of a photon. When an excited atom emits a photon it drops back down to the ground state, so we can write the number of atoms in excited states can be written as,
+\begin{align}
+N(t) = N_{0} - \alpha n
+\end{align}
+$N_{0}$ is the number of excited atoms the pump can keep excited, $\alpha$ is the decay rate, then the differential equation for the number of photons is,
+\begin{equation}
+	\frac{dn}{dt} = (GN_{0} - k )n - (\alpha G) n^2
+\end{equation}
+For all parts use $G = 5$, $\alpha = 3$, $k = 30$.
+\begin{itemize}
+	\item What are the units of $G$, $N_0$, $k$, and $\alpha$?
+	\item Write a function in Python for $\frac{dn}{dt}$.
+	\item Use rk2\_1d.py to solve for $n(t)$ with an initial condition of $n(0) = 100$. Run the program for pump strength of $N_0 = 1, 10 \text{ and } 100$. 
+	\item Plot $n$ as a function of time for each of the different pump strengths. Make sure to label and add a legend to the plot.
+	\item Make a second plot for a pump strength of $N_0 = 1$ and an initial condition of $n(0) = 0, \; 10^2, \text{ and } 10^4$ photons. How does the initial condition affect the final state of the laser.
+	\item Make a third plot with a pump strength of $N_0 = 10$ with initial conditions $n(0) = 0, \; 10^2, \text{ and } 10^4$ photons. How does the initial condition affect the final state of the laser.
+	\item Based on your graphs what matters more in making the laser, the number of photons you start with, of the strength of the pump. 
+	\item Try to find the Threshold $N_0$ where the atoms switch between just being a lamp, and becoming a laser. 
+\end{itemize}
+\end{document}
